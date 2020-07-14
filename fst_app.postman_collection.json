@@ -1,0 +1,22 @@
+{
+	"variables": [],
+	"info": {
+		"name": "fst app",
+		"_postman_id": "6267f2db-850d-889d-f5a1-c24295c30bd9",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get test models",
+			"request": {
+				"url": "http://127.0.0.1:8000/testview",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
