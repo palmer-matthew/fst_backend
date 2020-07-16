@@ -1,22 +1,105 @@
 {
-	"variables": [],
 	"info": {
+		"_postman_id": "001b3123-c4a3-4efa-be43-3d82e126125d",
 		"name": "fst app",
-		"_postman_id": "6267f2db-850d-889d-f5a1-c24295c30bd9",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "get test models",
 			"request": {
-				"url": "http://127.0.0.1:8000/testview",
 				"method": "GET",
 				"header": [],
-				"body": {},
-				"description": ""
+				"url": {
+					"raw": "http://127.0.0.1:8000/testview",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"testview"
+					]
+				}
 			},
 			"response": []
+		},
+		{
+			"name": "get_contacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/contact",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get_contacts",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/contact",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"contact"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 16 Jul 2020 02:42:42 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.2"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "345"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Department of Computing\",\n        \"website\": \"https://www.mona.uwi.edu/compsci/\",\n        \"email\": \"computing@uwimona.edu.jm\",\n        \"fax\": \"(876) 702-4455\",\n        \"phone\": \"(876) 702-4455\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Department of Mathematics\",\n        \"website\": \"https://www.mona.uwi.edu/mathematics/\",\n        \"email\": \"maths@uwimona.edu.jm\",\n        \"fax\": \"(876) 927-2464\",\n        \"phone\": \"(876) 977-2693\"\n    }\n]"
+				}
+			]
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
