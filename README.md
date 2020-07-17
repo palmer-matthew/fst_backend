@@ -33,7 +33,7 @@ psql
 
 ###  Create Database
 ```
-CREATE DATABASE fstapp
+CREATE DATABASE fstapp;
 ```
 
 ### Create User
