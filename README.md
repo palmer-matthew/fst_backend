@@ -31,9 +31,9 @@ CREATE USER fst_admin WITH PASSWORD 'fstAPP2020';
 
 ### Alter roles
 ```
-ALTER ROLE admin SET client_encoding TO 'utf8';
-ALTER ROLE admin SET default_transaction_isolation TO 'read committed';
-ALTER ROLE admin SET timezone TO 'UTC';
+ALTER ROLE fst_admin SET client_encoding TO 'utf8';
+ALTER ROLE fst_admin SET default_transaction_isolation TO 'read committed';
+ALTER ROLE fst_admin SET timezone TO 'UTC';
 ```
 
 ###  Grant Privileges
