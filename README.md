@@ -26,7 +26,7 @@ sudo -i -u postgres
 psql -U postgres
 ```
 
-### Run postgresSQL (Only Ubuntu otherwise skip this step)
+##### Run postgresSQL (Only Ubuntu otherwise skip this step)
 ```
 psql
 ```
