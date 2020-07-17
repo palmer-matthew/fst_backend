@@ -14,9 +14,14 @@ git clone https://github.com/YOUR_USERNAME_GOES_HERE/fst_backend.git
 
 Go to https://www.postgresql.org/
 
-### Login to  postgres
+### Login to postgres
 ```
-psql -U postgres
+sudo -i -u postgres
+```
+
+### Run postgresSQL 
+```
+psql
 ```
 
 ###  Create Database
