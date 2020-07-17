@@ -19,3 +19,11 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+class Scholarship(models.Model):
+    name = models.CharField(max_length=150)
+    description = models.TextField(default = "")
+    details = models.TextField(default = "")
+
+    def __str__(self):
+        return self.name

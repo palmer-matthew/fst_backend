@@ -3,9 +3,11 @@ from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from core.models import TestModel
+from core.models import Contact
+from core.models import Scholarship
 from core.serializers import TestModelSerializer
 from core.serializers import ContactSerializer
-from core.models import Contact
+from core.serializers import ScholarshipSerializer
 
 # Create your views here.
 
@@ -29,4 +31,9 @@ class ContactView(APIView):
         serializer = ContactSerializer(contact_models,many=True)
         return Response(serializer.data)
         
+class ScholarshipView(APIView):
 
+    def get(self, request, format=None):
+        scholarship_models = Scholarship.objects.all()
+        serializer = ScholarshipSerializer(scholarship_models,many=True)
+        return Response(serializer.data)
