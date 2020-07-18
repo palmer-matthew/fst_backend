@@ -214,7 +214,7 @@
 					"header": [
 						{
 							"key": "Date",
-							"value": "Sat, 18 Jul 2020 09:43:08 GMT"
+							"value": "Sat, 18 Jul 2020 10:35:44 GMT"
 						},
 						{
 							"key": "Server",
@@ -238,7 +238,7 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "290"
+							"value": "324"
 						},
 						{
 							"key": "X-Content-Type-Options",
@@ -246,7 +246,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Random Event\",\n        \"start_date_time\": \"July 30, 2020 10:00 pm\",\n        \"end_date_time\": \"July 31, 2020 10:00 pm\",\n        \"location\": \"Kingston, Jamaica\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Random Event 2\",\n        \"start_date_time\": \"August 30, 2020 10:00 pm\",\n        \"end_date_time\": \"August 30, 2020 10:00 pm\",\n        \"location\": \"Portmore\"\n    }\n]"
+					"body": "[\n    {\n        \"id\": 3,\n        \"name\": \"Random Event\",\n        \"start_date\": \"July 30, 2020\",\n        \"start_time\": \"10:00 pm\",\n        \"end_date\": \"July 31, 2020\",\n        \"end_time\": \"6:00 am\",\n        \"location\": \"Kingston, Jamaica\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Random Event 2\",\n        \"start_date\": \"August 30, 2020\",\n        \"start_time\": \"10:00 pm\",\n        \"end_date\": \"August 31, 2020\",\n        \"end_time\": \"6:00 am\",\n        \"location\": \"Portmore\"\n    }\n]"
 				}
 			]
 		}
