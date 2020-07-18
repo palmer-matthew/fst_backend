@@ -5,9 +5,11 @@ from rest_framework.response import Response
 from core.models import TestModel
 from core.models import Contact
 from core.models import Scholarship
+from core.models import Event
 from core.serializers import TestModelSerializer
 from core.serializers import ContactSerializer
 from core.serializers import ScholarshipSerializer
+from core.serializers import EventSerializer
 
 # Create your views here.
 
@@ -36,4 +38,11 @@ class ScholarshipView(APIView):
     def get(self, request, format=None):
         scholarship_models = Scholarship.objects.all()
         serializer = ScholarshipSerializer(scholarship_models,many=True)
+        return Response(serializer.data)
+
+class EventView(APIView):
+
+    def get(self, request, format = None):
+        event_models = Event.objects.all()
+        serializer = EventSerializer(event_models, many = True)
         return Response(serializer.data)
