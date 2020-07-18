@@ -12,10 +12,17 @@ class TestModel(models.Model):
 
 class Contact(models.Model):
     name = models.CharField(max_length=255)
-    phone = models.CharField(max_length=30)
     email = models.CharField(max_length=50)
-    fax = models.CharField(max_length=255,default="")
+    fax = models.CharField(max_length=255,default="",blank=True)
     website = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
+
+
+class PhoneNum(models.Model):
+    num = models.CharField(max_length=30,primary_key=True)
+    contact = models.ForeignKey(Contact, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.num
