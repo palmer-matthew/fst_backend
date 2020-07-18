@@ -14,14 +14,19 @@ git clone https://github.com/YOUR_USERNAME_GOES_HERE/fst_backend.git
 
 Go to https://www.postgresql.org/
 
-### Login to  postgres
+### Login to postgres
 ```
-psql -U postgres
+sudo -i -u postgres
+```
+
+### Run postgresSQL 
+```
+psql
 ```
 
 ###  Create Database
 ```
-CREATE DATABASE fstapp
+CREATE DATABASE fstapp;
 ```
 
 ### Create User
@@ -31,9 +36,9 @@ CREATE USER fst_admin WITH PASSWORD 'fstAPP2020';
 
 ### Alter roles
 ```
-ALTER ROLE admin SET client_encoding TO 'utf8';
-ALTER ROLE admin SET default_transaction_isolation TO 'read committed';
-ALTER ROLE admin SET timezone TO 'UTC';
+ALTER ROLE fst_admin SET client_encoding TO 'utf8';
+ALTER ROLE fst_admin SET default_transaction_isolation TO 'read committed';
+ALTER ROLE fst_admin SET timezone TO 'UTC';
 ```
 
 ###  Grant Privileges

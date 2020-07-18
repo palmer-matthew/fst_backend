@@ -41,6 +41,16 @@ git add --all
 git commit -m "A descritpive message of what you did for this feature"
 ```
 
+# Write a unit test
+Create a unit test for the feature you created in tests.py. Run the tests to make  sure  everything is ok.
+```
+python manage.py test
+```
+**Note if you get an error saying permission denied, it means you need to give the database user createdb permission.Run the  below command in postgres**.
+```
+ALTER ROLE fst_admin CREATEDB;
+```
+
 # Push  your code
 You will go ahead and now push your branch
 ```
