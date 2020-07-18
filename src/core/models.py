@@ -19,10 +19,16 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
 
-
 class PhoneNum(models.Model):
     num = models.CharField(max_length=30,primary_key=True)
     contact = models.ForeignKey(Contact, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.num
+class Scholarship(models.Model):
+    name = models.CharField(max_length=150)
+    description = models.TextField(default = "")
+    details = models.TextField(default = "")
+
+    def __str__(self):
+        return self.name
