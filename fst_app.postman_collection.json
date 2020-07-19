@@ -214,7 +214,7 @@
 					"header": [
 						{
 							"key": "Date",
-							"value": "Sat, 18 Jul 2020 10:35:44 GMT"
+							"value": "Sun, 19 Jul 2020 05:38:57 GMT"
 						},
 						{
 							"key": "Server",
@@ -238,7 +238,7 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "324"
+							"value": "309"
 						},
 						{
 							"key": "X-Content-Type-Options",
@@ -246,7 +246,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\n    {\n        \"id\": 3,\n        \"name\": \"Random Event\",\n        \"start_date\": \"July 30, 2020\",\n        \"start_time\": \"10:00 pm\",\n        \"end_date\": \"July 31, 2020\",\n        \"end_time\": \"6:00 am\",\n        \"location\": \"Kingston, Jamaica\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Random Event 2\",\n        \"start_date\": \"August 30, 2020\",\n        \"start_time\": \"10:00 pm\",\n        \"end_date\": \"August 31, 2020\",\n        \"end_time\": \"6:00 am\",\n        \"location\": \"Portmore\"\n    }\n]"
+					"body": "[\n    {\n        \"id\": 5,\n        \"name\": \"FST Pre-Orientation\",\n        \"start_date_time\": \"2020-08-05T09:00:00Z\",\n        \"end_date_time\": \"2020-08-05T14:00:00Z\",\n        \"location\": \"Faculty of Science and Technology\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Fresher's Orientation\",\n        \"start_date_time\": \"2020-08-28T09:00:00Z\",\n        \"end_date_time\": \"2020-08-28T14:00:00Z\",\n        \"location\": \"UWI, Mona\"\n    }\n]"
 				}
 			]
 		}

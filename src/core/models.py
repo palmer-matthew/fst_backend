@@ -30,10 +30,8 @@ class Scholarship(models.Model):
 
 class Event(models.Model):
     name = models.CharField(max_length = 150)
-    start_date = models.CharField(max_length = 50)
-    start_time = models.CharField(max_length = 10)
-    end_date = models.CharField(max_length = 50)
-    end_time = models.CharField(max_length = 10)
+    start_date_time = models.DateTimeField()
+    end_date_time = models.DateTimeField()
     location = models.CharField(max_length = 150)
 
     def __str__(self):
