@@ -5,9 +5,11 @@ from rest_framework.response import Response
 from core.models import TestModel
 from core.models import Contact
 from core.models import Scholarship
+from core.models import PhoneNumber
 from core.serializers import TestModelSerializer
 from core.serializers import ContactSerializer
 from core.serializers import ScholarshipSerializer
+from core.serializers import PhoneNumberSerializer
 
 # Create your views here.
 
@@ -29,8 +31,15 @@ class ContactView(APIView):
     def get(self, request, format=None):
         contact_models = Contact.objects.all()
         serializer = ContactSerializer(contact_models,many=True)
+        return Response(serializer.data)        
+
+class PhoneNumberView(APIView):
+
+    def get(self, request, format=None):
+        phone_num_models = PhoneNumber.objects.all()
+        serializer = PhoneNumberSerializer(phone_num_models,many=True)
         return Response(serializer.data)
-        
+
 class ScholarshipView(APIView):
 
     def get(self, request, format=None):

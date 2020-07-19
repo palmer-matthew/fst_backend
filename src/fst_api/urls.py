@@ -17,8 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
 from core.views import TestView
-from core.views import ContactView
 from core.views import ScholarshipView
+from core.views import PhoneNumberView
+from core.views import ContactView
 
 urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls')),
@@ -26,4 +27,6 @@ urlpatterns = [
     path('testview/', TestView.as_view()),
     path('contact/', ContactView.as_view()),
     path('scholarship/', ScholarshipView.as_view()),
+    path('phone/', PhoneNumberView.as_view()),
+
 ]

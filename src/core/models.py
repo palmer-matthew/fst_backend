@@ -11,14 +11,50 @@ class TestModel(models.Model):
         return  self.first_name  + ' ' + self.last_name
 
 class Contact(models.Model):
-    name = models.CharField(max_length=255)
-    phone = models.CharField(max_length=30)
-    email = models.CharField(max_length=50)
-    fax = models.CharField(max_length=255,default="")
-    website = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
+    #phone = models.ForeignKey(PhoneNumber,on_delete=models.CASCADE, null=True, blank=True)
+    email = models.CharField(max_length=50, default="", blank=True)
+    fax = models.CharField(max_length=255, default="", blank=True)
+    website = models.CharField(max_length=255, default="", blank=True)
+    description = models.CharField(max_length=255, default="", blank=True)
+    DEPARTMENT = [
+        ('CHEM','Chemistry'),
+        ('COMP','Computing'),
+        ('GEO', 'Geography and Geology'),
+        ('LIFE', 'Life Sciences'),
+        ('MATH', 'Mathematics'),
+        ('PHYS', 'Physics'),
+        ('OTHER', 'Other')
+    ]
+    department = models.CharField(max_length=5,choices=DEPARTMENT)
+    CONTACT_TYPE= [
+        ('EMERGENCY','Emergency'),
+        ('OFFICE', 'Office'),
+        ('FACULTY/STAFF', 'Faculty/Staff'),        
+        ('OTHER','Other')
+    ]
+    contact_type = models.CharField(max_length=13, choices=CONTACT_TYPE)
 
     def __str__(self):
+        return self.name + ('' if not self.description else ', '+self.description)
+
+    def __unicode__(self):
         return self.name
+
+class PhoneNumber(models.Model):
+    phone = models.CharField(max_length=30, unique=True)
+    contact = models.ForeignKey(Contact,on_delete=models.CASCADE, null=True, related_name='phone_contact_set')
+    PLATFORMS = [
+        ('TEXT/CALL', 'Text/Call'),
+        ('WHATSAPP', 'Text/WhatsApp/Call')        
+    ]
+    platforms = models.CharField(max_length=9, choices=PLATFORMS, null=True, default='TEXT/CALL')
+
+    def __str__(self):
+        return self.phone
+
+    def __unicode__(self):
+        return self.phone
 
 class Scholarship(models.Model):
     name = models.CharField(max_length=150)
