@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import generics, filters
 from core.models import TestModel
 from core.models import Contact
 from core.models import Scholarship
@@ -26,12 +27,13 @@ class TestView(APIView):
         serializer  = TestModelSerializer(test_models, many=True)
         return Response(serializer.data)
 
-class ContactView(APIView):
-
-    def get(self, request, format=None):
-        contact_models = Contact.objects.all()
-        serializer = ContactSerializer(contact_models,many=True)
-        return Response(serializer.data)        
+class ContactView(generics.ListCreateAPIView):
+    serializer_class = ContactSerializer
+    queryset = Contact.objects.all()
+    filter_backends = (filters.SearchFilter,filters.OrderingFilter)
+    ordering_fields = ['id']
+    ordering = ['id']
+    search_fields = ['name','description','email']
 
 class PhoneNumberView(APIView):
 

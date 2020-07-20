@@ -15,11 +15,11 @@ class PhoneNumberSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PhoneNumber
-        fields = ('id', 'phone', 'contact','platforms')
+        fields = ('id','contact', 'phone', 'platforms')
 
 
 class ContactSerializer(serializers.ModelSerializer):
-
+    phone_contact_set = PhoneNumberSerializer(many=True)
     class Meta:
         model = Contact
         fields = ('id','name','website','email','fax', 'description', 'department', 'contact_type', 'phone_contact_set')
