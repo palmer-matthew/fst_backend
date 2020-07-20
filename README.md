@@ -15,11 +15,18 @@ git clone https://github.com/YOUR_USERNAME_GOES_HERE/fst_backend.git
 Go to https://www.postgresql.org/
 
 ### Login to postgres
+
+- On Ubuntu
 ```
 sudo -i -u postgres
 ```
 
-### Run postgresSQL 
+- On Windows
+```
+psql -U postgres
+```
+
+##### Run postgresSQL (Only Ubuntu otherwise skip this step)
 ```
 psql
 ```
