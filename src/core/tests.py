@@ -73,13 +73,10 @@ class ScholarshipViewTest(TestCase):
 
         self.assertEqual(response.status_code, 200)
 
-        # get json data
         data = response.json()
 
-        #check number of models returned
         self.assertEqual(len(data), 3)
 
-        #check if api returns data stored
         expected_response = [{
                                 'id': tst_scholar_model1.id, 
                                 'name': "Jimmy Neutron Welfare Scholarship",
