@@ -27,3 +27,12 @@ class Scholarship(models.Model):
 
     def __str__(self):
         return self.name
+
+class Event(models.Model):
+    name = models.CharField(max_length = 150)
+    start_date_time = models.DateTimeField()
+    end_date_time = models.DateTimeField()
+    location = models.CharField(max_length = 150)
+
+    def __str__(self):
+        return self.name
