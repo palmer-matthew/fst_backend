@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "915df35d-411f-49b6-b689-0b70fd546f19",
+		"_postman_id": "814071c9-c7d5-48cd-b2f2-795f66e31f20",
 		"name": "fst app",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -172,6 +172,81 @@
 					],
 					"cookie": [],
 					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"The GraceKennedy/Douglas Orane Scholarship for Science, Technology Or Engineering\",\n        \"description\": \"It is an annual scholarship to any student attending any of the following institution: The University of the West Indies and  University of Technology, Jamaica. The scholarship will be open to all undergraduate applicants who have met the entry requirements of The University of the West Indies or University of Technology Jamaica and the Faculty to which they request admission, and who qualify under the terms and conditions stated below.\",\n        \"details\": \"The applicant shall: –\\r\\n3.1 Be a Jamaican citizen\\r\\n3.2 On the first day of May in the year of the application, the candidate shall\\r\\nnot be over the age of twenty-three (23) years\\r\\n3.3 Have completed the application for admission as a full-time student to\\r\\none (1) of the institutions listed in 2.0 and, at the time of interview, have\\r\\nbeen accepted for entry\\r\\n3.4 Have a 3.0 GPA average or above\\r\\n3.5 Be a person of good character, displaying leadership qualities, manifesting\\r\\ncreative energy and curiosity and consistent involvement in social and\\r\\ncommunity activities\\r\\n\\r\\nINSTRUCTIONS\\r\\n4.1 Supporting documents to be submitted with the application form:\\r\\ni. A reference from a Senior Teacher/Principal at the applicant’s High\\r\\nSchool or a Lecturer from the Faculty (if currently enrolled in the\\r\\ninstitution)\\r\\nii. Academic Record: Certified copies of CSEC, CAPE & University\\r\\ngrades. It is the responsibility of the applicant to submit all\\r\\noutstanding academic grades (CAPE/ Semester grades) received\\r\\nafter July 15. These grades are to be emailed to\\r\\ngkfoundation@gkco.com\\r\\niii. Copy of birth certificate\\r\\niv. Statement about career goals, leadership abilities, social &\\r\\ncommunity involvement. Share life examples of the applicant’s\\r\\ncreative energy and curiosity (not to exceed 500 words)\\r\\nv. Acceptance letter from the University (if the applicant is a new\\r\\nstudent of the institution)\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Dr. Keith Peart Memorial Busary For Students With Special Needs\",\n        \"description\": \"The award is available to Jamaican Nationals with disabilities who are: pursuing studies leading to a first degree in any faculty; entering level two; registered with the Jamaica Council for Persons with Disabilities (JCPD) and the Office for Special Students Services (OSSS).\",\n        \"details\": \"The award will be based on: high academic achievement; verifiable financial need; involvement in co-curricular activities. Short-listed candidates will be interviewed by a panel comprising personnel from the Office of Special Student Services, Lions Club of Mona and Family of Dr. Keith Peart. Applicants must be able to show evidence of involvement in co-curricular activities.\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get_events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/events/",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"events",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get_events",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/events/",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"events",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 19 Jul 2020 05:38:57 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.7.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "309"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 5,\n        \"name\": \"FST Pre-Orientation\",\n        \"start_date_time\": \"2020-08-05T09:00:00Z\",\n        \"end_date_time\": \"2020-08-05T14:00:00Z\",\n        \"location\": \"Faculty of Science and Technology\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Fresher's Orientation\",\n        \"start_date_time\": \"2020-08-28T09:00:00Z\",\n        \"end_date_time\": \"2020-08-28T14:00:00Z\",\n        \"location\": \"UWI, Mona\"\n    }\n]"
 				}
 			]
 		}

@@ -3,6 +3,7 @@ from core.models import TestModel
 from core.models import Contact
 from core.models import Scholarship
 from core.models import PhoneNumber
+from core.models import Event
 
 
 class TestModelSerializer(serializers.ModelSerializer):
@@ -30,5 +31,11 @@ class ScholarshipSerializer(serializers.ModelSerializer):
     class Meta:
         model = Scholarship
         fields = ('id','name','description','details')
+
+class EventSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Event
+        fields = ('id', 'name', 'start_date_time', 'end_date_time', 'location')
 
         
