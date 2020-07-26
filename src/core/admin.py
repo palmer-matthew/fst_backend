@@ -1,9 +1,9 @@
 from django.contrib import admin
-from core.models import TestModel
-from core.models import Contact
-from core.models import Scholarship
-from core.models import PhoneNumber
-from core.models import Event
+from src.core.models import TestModel
+from src.core.models import Contact
+from src.core.models import Scholarship
+from src.core.models import PhoneNumber
+from src.core.models import Event
 
 # Register your models here.
 
