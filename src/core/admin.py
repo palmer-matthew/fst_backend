@@ -3,6 +3,7 @@ from core.models import TestModel
 from core.models import Contact
 from core.models import Scholarship
 from core.models import PhoneNumber
+from core.models import Event
 
 # Register your models here.
 
@@ -22,3 +23,4 @@ class ContactInline(admin.ModelAdmin):
 
 
 admin.site.register(Contact,ContactInline)
+admin.site.register(Event)

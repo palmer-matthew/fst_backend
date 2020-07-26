@@ -20,6 +20,7 @@ from core.views import TestView
 from core.views import ScholarshipView
 from core.views import PhoneNumberView
 from core.views import ContactView
+from core.views import EventView
 
 urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls')),
@@ -28,5 +29,5 @@ urlpatterns = [
     path('contact/', ContactView.as_view()),
     path('scholarship/', ScholarshipView.as_view()),
     path('phone/', PhoneNumberView.as_view()),
-
+    path('events/', EventView.as_view())
 ]
