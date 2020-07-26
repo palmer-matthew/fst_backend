@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'fst_api.wsgi.application'
+WSGI_APPLICATION = 'src.fst_api.wsgi.application'
 
 
 # Database
