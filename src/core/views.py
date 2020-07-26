@@ -11,6 +11,7 @@ from core.serializers import TestModelSerializer
 from core.serializers import ContactSerializer
 from core.serializers import ScholarshipSerializer
 from core.serializers import PhoneNumberSerializer
+from django.db.models import Q
 
 # Create your views here.
 
@@ -27,13 +28,36 @@ class TestView(APIView):
         serializer  = TestModelSerializer(test_models, many=True)
         return Response(serializer.data)
 
-class ContactView(generics.ListCreateAPIView):
-    serializer_class = ContactSerializer
-    queryset = Contact.objects.all()
-    filter_backends = (filters.SearchFilter,filters.OrderingFilter)
-    ordering_fields = ['id']
-    ordering = ['id']
-    search_fields = ['name','description','email']
+class ContactView(APIView):
+
+    def get(self, request):
+        qs = Contact.objects.all()
+
+        dep = self.request.query_params.get('department')
+        c_type = self.request.query_params.get('type')
+        search = self.request.query_params.get('search')
+
+        if dep in ['CHEM','COMP', 'GEO', 'LIFE', 'MATH', 'PHYS']:
+            qs = qs.filter(department__exact=dep)
+        
+        if dep == 'OTHER':
+            qs = qs.filter(Q(department__exact=dep) , ~Q(contact_type__exact='EMERGENCY') & ~Q(contact_type__exact='OTHER'))
+        
+        if c_type in ['EMERGENCY','OTHER']:
+            qs = qs.filter(contact_type__exact=c_type)
+        
+        if search is not None and search != '':
+            if len(search.split(' ')) ==1:
+                qs = qs.filter(Q(name__icontains=search) | Q(description__icontains=search) | Q(phone_contact_set__phone__icontains=search))
+            else:
+                search_list = search.split(' ')
+                qs = qs.filter(*[Q(name__icontains=word) | Q(description__icontains=word) | Q(phone_contact_set__phone__icontains=word) for word in search_list])
+
+        qs = qs.distinct()
+        qs = qs.order_by('name')
+        serializer = ContactSerializer(qs, many=True)
+        
+        return Response(serializer.data)
 
 class PhoneNumberView(APIView):
 
