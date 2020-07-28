@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'src.core',
+    'core',
 ]
 
 REST_FRAMEWORK = {
@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'src.fst_api.urls'
+ROOT_URLCONF = 'fst_api.urls'
 
 TEMPLATES = [
     {
@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'src.fst_api.wsgi.application'
+WSGI_APPLICATION = 'fst_api.wsgi.application'
 
 
 # Database

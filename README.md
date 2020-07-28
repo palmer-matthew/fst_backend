@@ -89,11 +89,6 @@ venv\Scripts\activate
 pip  install -r requirements.txt
 ```
 
-### Change directory to src folder
-```
-cd src
-```
-
 ### Migrate Database
 ```
 python manage.py migrate

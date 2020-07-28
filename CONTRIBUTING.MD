@@ -17,7 +17,7 @@ git remote add upstream https://github.com/UWICompSociety/fst_backend.git
 
 Also incase there are any changes to the database. Run a migration  so your local database can be  updated.
 ```
-python src/manage.py migrate
+python manage.py migrate
 ```
 
 # Create a branch for your feature

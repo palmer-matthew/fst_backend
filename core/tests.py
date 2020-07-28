@@ -1,9 +1,9 @@
 from django.test import TestCase
 from django.test import Client
-from src.core.models import TestModel
-from src.core.models import Contact
-from src.core.models import PhoneNumber
-from src.core.models import Event
+from core.models import TestModel
+from core.models import Contact
+from core.models import PhoneNumber
+from core.models import Event
 # Create your tests here.
 
 class ContactViewTest(TestCase):

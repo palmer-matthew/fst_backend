@@ -3,17 +3,17 @@ from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics, filters
-from src.core.models import TestModel
-from src.core.models import Contact
-from src.core.models import Scholarship
-from src.core.models import PhoneNumber
-from src.core.serializers import PhoneNumberSerializer
+from core.models import TestModel
+from core.models import Contact
+from core.models import Scholarship
+from core.models import PhoneNumber
+from core.serializers import PhoneNumberSerializer
 from django.db.models import Q
-from src.core.models import Event
-from src.core.serializers import TestModelSerializer
-from src.core.serializers import ContactSerializer
-from src.core.serializers import ScholarshipSerializer
-from src.core.serializers import EventSerializer
+from core.models import Event
+from core.serializers import TestModelSerializer
+from core.serializers import ContactSerializer
+from core.serializers import ScholarshipSerializer
+from core.serializers import EventSerializer
 
 # Create your views here.
 

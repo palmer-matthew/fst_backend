@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
-from src.core.views import TestView
-from src.core.views import ScholarshipView
-from src.core.views import PhoneNumberView
-from src.core.views import ContactView
-from src.core.views import EventView
+from core.views import TestView
+from core.views import ScholarshipView
+from core.views import PhoneNumberView
+from core.views import ContactView
+from core.views import EventView
 
 urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls')),
