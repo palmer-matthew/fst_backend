@@ -72,3 +72,11 @@ class Event(models.Model):
 
     def __str__(self):
         return self.name
+
+class NewsFeed(models.Model):
+    title = models.TextField(default = "")
+    date = models.DateField()
+    story = models.TextField(default = "")
+    
+    def __str__(self):
+        return self.title

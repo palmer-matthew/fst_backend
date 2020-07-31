@@ -4,6 +4,8 @@ from core.models import TestModel
 from core.models import Contact
 from core.models import PhoneNumber
 from core.models import Event
+from core.models import NewsFeed
+import datetime
 # Create your tests here.
 
 class ContactViewTest(TestCase):
@@ -305,4 +307,41 @@ class EventViewTest(TestCase):
                                 'location': 'UWI, Mona' 
                             }]
 
+        self.assertEqual(data, expected_response)
+        
+class  NewsFeedViewTest(TestCase):
+
+    def setUp(self):
+        self.client = Client()
+    
+    def test_get(self):
+        # Create test models
+        news_story1 = NewsFeed(title = 'News Story 1', date = datetime.date(2020, 4, 17), story = 'This is my first news story.')
+        news_story1.save()
+        news_story2 = NewsFeed(title = 'News Story 2', date = datetime.date(2020, 5, 21), story = 'This is my second news story.')
+        news_story2.save()
+        
+        #making a get request to test model endpoint
+        response  = self.client.get('/newsfeed/')
+
+        #check status code
+        self.assertEqual(response.status_code, 200)
+
+        # get json data
+        data = response.json()
+
+        #check number of models returned
+        self.assertEqual(len(data), 2)
+
+        #check if api returns data stored
+        expected_response = [{
+                                'title': 'News Story 1', 
+                                'date': '2020-04-17', 
+                                'story': 'This is my first news story.'
+                            }, 
+                            {
+                              'title': 'News Story 2',
+                              'date': '2020-05-21',
+                              'story': 'This is my second news story.' 
+                            }]
         self.assertEqual(data, expected_response)
