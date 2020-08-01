@@ -335,13 +335,15 @@ class  NewsFeedViewTest(TestCase):
 
         #check if api returns data stored
         expected_response = [{
+                                'id': news_story1.id,
                                 'title': 'News Story 1', 
                                 'date': '2020-04-17', 
                                 'story': 'This is my first news story.'
                             }, 
                             {
-                              'title': 'News Story 2',
-                              'date': '2020-05-21',
-                              'story': 'This is my second news story.' 
+                                'id': news_story2.id,
+                                'title': 'News Story 2',
+                                'date': '2020-05-21',
+                                'story': 'This is my second news story.' 
                             }]
         self.assertEqual(data, expected_response)
