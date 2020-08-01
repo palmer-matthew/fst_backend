@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "814071c9-c7d5-48cd-b2f2-795f66e31f20",
+		"_postman_id": "abeb65bf-fbad-4c07-9faf-4319a0c82b35",
 		"name": "fst app",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -249,6 +249,17 @@
 					"body": "[\n    {\n        \"id\": 5,\n        \"name\": \"FST Pre-Orientation\",\n        \"start_date_time\": \"2020-08-05T09:00:00Z\",\n        \"end_date_time\": \"2020-08-05T14:00:00Z\",\n        \"location\": \"Faculty of Science and Technology\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Fresher's Orientation\",\n        \"start_date_time\": \"2020-08-28T09:00:00Z\",\n        \"end_date_time\": \"2020-08-28T14:00:00Z\",\n        \"location\": \"UWI, Mona\"\n    }\n]"
 				}
 			]
+		},
+		{
+			"name": "get_newsfeed",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}

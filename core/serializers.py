@@ -4,6 +4,7 @@ from core.models import Contact
 from core.models import Scholarship
 from core.models import PhoneNumber
 from core.models import Event
+from core.models import NewsFeed
 
 
 class TestModelSerializer(serializers.ModelSerializer):
@@ -38,4 +39,10 @@ class EventSerializer(serializers.ModelSerializer):
         model = Event
         fields = ('id', 'name', 'start_date_time', 'end_date_time', 'location')
 
+class NewsFeedSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = NewsFeed
+        fields = ('id','title','date','story')
+        
         

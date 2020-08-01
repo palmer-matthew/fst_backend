@@ -7,6 +7,7 @@ from core.models import TestModel
 from core.models import Contact
 from core.models import Scholarship
 from core.models import PhoneNumber
+from core.models import NewsFeed
 from core.serializers import PhoneNumberSerializer
 from django.db.models import Q
 from core.models import Event
@@ -14,6 +15,7 @@ from core.serializers import TestModelSerializer
 from core.serializers import ContactSerializer
 from core.serializers import ScholarshipSerializer
 from core.serializers import EventSerializer
+from core.serializers import NewsFeedSerializer
 
 # Create your views here.
 
@@ -80,4 +82,11 @@ class EventView(APIView):
     def get(self, request, format = None):
         event_models = Event.objects.all()
         serializer = EventSerializer(event_models, many = True)
+        return Response(serializer.data)
+
+class NewsFeedView(APIView):
+
+    def get(self, request, format=None):
+        newsfeed_models = NewsFeed.objects.all()
+        serializer = NewsFeedSerializer(newsfeed_models,many=True)
         return Response(serializer.data)
