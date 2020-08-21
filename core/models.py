@@ -30,7 +30,7 @@ class Contact(models.Model):
     CONTACT_TYPE= [
         ('EMERGENCY','Emergency'),
         ('OFFICE', 'Office'),
-        ('FACULTY/STAFF', 'Faculty/Staff'),        
+        ('FACULTY_STAFF', 'Faculty/Staff'),        
         ('OTHER','Other')
     ]
     contact_type = models.CharField(max_length=13, choices=CONTACT_TYPE)
@@ -45,7 +45,7 @@ class PhoneNumber(models.Model):
     phone = models.CharField(max_length=30, unique=True)
     contact = models.ForeignKey(Contact,on_delete=models.CASCADE, null=True, related_name='phone_contact_set')
     PLATFORMS = [
-        ('TEXT/CALL', 'Text/Call'),
+        ('TEXT_CALL', 'Text/Call'),
         ('WHATSAPP', 'Text/WhatsApp/Call')        
     ]
     platforms = models.CharField(max_length=9, choices=PLATFORMS, null=True, default='TEXT/CALL')
