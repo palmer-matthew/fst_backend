@@ -67,4 +67,4 @@ class GeoJSONFeatureSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = GeoJSONFeature
-        fields = ('id','geo_json_type','geometry')
+        fields = ('id','geo_json_type','title','code','alt_name','associated_with','geometry')
