@@ -22,14 +22,21 @@ from core.views import PhoneNumberView
 from core.views import ContactView
 from core.views import EventView
 from core.views import NewsFeedView
+from core.views import PositionView
+from core.views import GeoJSONFeatureView
+from core.views import GeometryObjectView
 
 urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls')),
+    url(r'^_nested_admin/', include('nested_admin.urls')),
     path('admin/', admin.site.urls),
     path('testview/', TestView.as_view()),
     path('contact/', ContactView.as_view()),
     path('scholarship/', ScholarshipView.as_view()),
     path('phone/', PhoneNumberView.as_view()),
     path('events/', EventView.as_view()),
-    path('newsfeed/', NewsFeedView.as_view())
+    path('newsfeed/', NewsFeedView.as_view()),
+    path('position/', PositionView.as_view()),
+    path('feature/',GeoJSONFeatureView.as_view()),
+    path('geometryobject/', GeometryObjectView.as_view())
 ]

@@ -8,6 +8,9 @@ from core.models import Contact
 from core.models import Scholarship
 from core.models import PhoneNumber
 from core.models import NewsFeed
+from core.models import Position
+from core.models import GeometryObject
+from core.models import GeoJSONFeature
 from core.serializers import PhoneNumberSerializer
 from django.db.models import Q
 from core.models import Event
@@ -16,6 +19,9 @@ from core.serializers import ContactSerializer
 from core.serializers import ScholarshipSerializer
 from core.serializers import EventSerializer
 from core.serializers import NewsFeedSerializer
+from core.serializers import GeoJSONFeatureSerializer
+from core.serializers import PositionSerializer
+from core.serializers import GeometryObjectSerializer
 
 # Create your views here.
 
@@ -89,4 +95,23 @@ class NewsFeedView(APIView):
     def get(self, request, format=None):
         newsfeed_models = NewsFeed.objects.all()
         serializer = NewsFeedSerializer(newsfeed_models,many=True)
+        return Response(serializer.data)
+
+
+class GeoJSONFeatureView(APIView):
+    def get(self, request, format=None):
+        feature_models = GeoJSONFeature.objects.all()
+        serializer = GeoJSONFeatureSerializer(feature_models,many=True)
+        return Response(serializer.data)
+
+class GeometryObjectView(APIView):
+    def get(self, request, format=None):
+        geometry_object_models = GeometryObject.objects.all()
+        serializer = GeometryObjectSerializer(geometry_object_models,many=True)
+        return Response(serializer.data)
+
+class PositionView(APIView):
+    def get(self, request, format=None):
+        position_models = Position.objects.all()
+        serializer = PositionSerializer(position_models,many=True)
         return Response(serializer.data)
