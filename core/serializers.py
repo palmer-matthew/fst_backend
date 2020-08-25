@@ -5,6 +5,9 @@ from core.models import Scholarship
 from core.models import PhoneNumber
 from core.models import Event
 from core.models import NewsFeed
+from core.models import Position
+from core.models import GeometryObject
+from core.models import GeoJSONFeature
 
 
 class TestModelSerializer(serializers.ModelSerializer):
@@ -45,4 +48,23 @@ class NewsFeedSerializer(serializers.ModelSerializer):
         model = NewsFeed
         fields = ('id','title','date','story')
         
-        
+
+class PositionSerializer (serializers.ModelSerializer):
+
+    class Meta:
+        model = Position
+        fields = ('id','geometry_object', 'longitude','latitude')
+
+class GeometryObjectSerializer(serializers.ModelSerializer):
+    coordinates = PositionSerializer(many=True)
+
+    class Meta:
+        model = GeometryObject
+        fields = ('id','feature', 'geometry_type','coordinates')
+
+class GeoJSONFeatureSerializer(serializers.ModelSerializer):
+    geometry = GeometryObjectSerializer(many=False)
+
+    class Meta:
+        model = GeoJSONFeature
+        fields = ('id','geo_json_type','geometry')
