@@ -99,7 +99,7 @@ class GeoJSONFeature(models.Model):
     )
 
     def __str__(self):
-        return self.geo_json_type.__str__() + ' '+ self.geometry.__str__()
+        return self.geo_json_type.__str__() + ' '+self.title+'/'+ self.alt_name+' '+ self.geometry.__str__()
 
 
 class GeometryObject(models.Model):
