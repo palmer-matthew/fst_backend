@@ -53,7 +53,7 @@ class PositionSerializer (serializers.ModelSerializer):
 
     class Meta:
         model = Position
-        fields = ('id','geometry_object', 'longitude','latitude')
+        fields = ('id','geometry_object', 'longitude','latitude', 'marker')
 
 class GeometryObjectSerializer(serializers.ModelSerializer):
     coordinates = PositionSerializer(many=True)

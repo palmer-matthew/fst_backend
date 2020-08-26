@@ -128,6 +128,12 @@ class Position(models.Model):
     geometry_object = models.ForeignKey(
         GeometryObject, on_delete=models.CASCADE, related_name="coordinates"
     )
+    MARKER_TYPES = [
+        ('START','start'),
+        ('END', 'end'),
+        ('NONE', 'none')
+    ]
+    marker = models.CharField(max_length=5, default='NONE', choices=MARKER_TYPES)
 
     def __str__(self):
         return (
