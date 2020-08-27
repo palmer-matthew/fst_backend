@@ -40,7 +40,7 @@ class EventSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Event
-        fields = ('id', 'name', 'start_date_time', 'end_date_time', 'location')
+        fields = ('id', 'name', 'start_date_time', 'end_date_time', 'location', 'poster_image')
 
 class NewsFeedSerializer(serializers.ModelSerializer):
 

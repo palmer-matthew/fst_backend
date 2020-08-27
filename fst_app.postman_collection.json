@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "abeb65bf-fbad-4c07-9faf-4319a0c82b35",
+		"_postman_id": "814071c9-c7d5-48cd-b2f2-795f66e31f20",
 		"name": "fst app",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -214,7 +214,7 @@
 					"header": [
 						{
 							"key": "Date",
-							"value": "Sun, 19 Jul 2020 05:38:57 GMT"
+							"value": "Thu, 27 Aug 2020 15:19:24 GMT"
 						},
 						{
 							"key": "Server",
@@ -238,7 +238,7 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "309"
+							"value": "635"
 						},
 						{
 							"key": "X-Content-Type-Options",
@@ -246,20 +246,9 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\n    {\n        \"id\": 5,\n        \"name\": \"FST Pre-Orientation\",\n        \"start_date_time\": \"2020-08-05T09:00:00Z\",\n        \"end_date_time\": \"2020-08-05T14:00:00Z\",\n        \"location\": \"Faculty of Science and Technology\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Fresher's Orientation\",\n        \"start_date_time\": \"2020-08-28T09:00:00Z\",\n        \"end_date_time\": \"2020-08-28T14:00:00Z\",\n        \"location\": \"UWI, Mona\"\n    }\n]"
+					"body": "[\n    {\n        \"id\": 10,\n        \"name\": \"General Orientation for New Undergraduate Students\",\n        \"start_date_time\": \"2020-08-28T09:00:00Z\",\n        \"end_date_time\": \"2020-08-28T15:00:00Z\",\n        \"location\": \"Online\",\n        \"poster_image\": \"assets/general_orientation_poster.JPG\"\n    },\n    {\n        \"id\": 11,\n        \"name\": \"Geography & Geology Q&A Session\",\n        \"start_date_time\": \"2020-08-29T18:00:00Z\",\n        \"end_date_time\": \"2020-08-29T21:00:00Z\",\n        \"location\": \"The FSTGC Youtube Page\",\n        \"poster_image\": \"assets/geo_geol_qna_poster.JPG\"\n    },\n    {\n        \"id\": 12,\n        \"name\": \"FST Virtual Orientation\",\n        \"start_date_time\": \"2020-08-31T09:00:00Z\",\n        \"end_date_time\": \"2020-09-04T17:00:00Z\",\n        \"location\": \"Online\",\n        \"poster_image\": \"assets/fst_orientation_poster.JPG\"\n    }\n]"
 				}
 			]
-		},
-		{
-			"name": "get_newsfeed",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": ""
-				}
-			},
-			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}

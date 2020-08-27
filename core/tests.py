@@ -280,9 +280,9 @@ class EventViewTest(TestCase):
 
     def test_get(self):
 
-        event1 = Event(name = 'FST Pre-Orientation', start_date_time = '2020-08-05T09:00:00Z', end_date_time = '2020-08-05T14:00:00Z', location = 'Faculty of Science and Technology')
+        event1 = Event(name = 'General Orientation for New Undergraduate Students', start_date_time = '2020-08-28T09:00:00Z', end_date_time = '2020-08-28T15:00:00Z', location = 'Online', poster_image = 'assets/general_orientation_poster.JPG')
         event1.save()
-        event2 = Event(name = 'Fresher\'s Orientation', start_date_time = '2020-08-28T09:00:00Z', end_date_time = '2020-08-28T14:00:00Z', location = 'UWI, Mona')
+        event2 = Event(name = 'FST Virtual Orientation', start_date_time = '2020-08-31T09:00:00Z', end_date_time = '2020-09-04T17:00:00Z', location = 'Online', poster_image = 'assets/fst_orientation_poster.JPG')
         event2.save()
 
         response = self.client.get('/events/')
@@ -295,17 +295,19 @@ class EventViewTest(TestCase):
 
         expected_response = [{
                                 'id': event1.id,
-                                'name': 'FST Pre-Orientation',
-                                'start_date_time': '2020-08-05T09:00:00Z',
-                                'end_date_time': '2020-08-05T14:00:00Z',
-                                'location': 'Faculty of Science and Technology'
+                                'name': 'General Orientation for New Undergraduate Students',
+                                'start_date_time': '2020-08-28T09:00:00Z',
+                                'end_date_time': '2020-08-28T15:00:00Z',
+                                'location': 'Online',
+                                'poster_image': 'assets/general_orientation_poster.JPG'
                             },
                             {
                                 'id': event2.id,
-                                'name': 'Fresher\'s Orientation',
-                                'start_date_time': '2020-08-28T09:00:00Z',
-                                'end_date_time': '2020-08-28T14:00:00Z',
-                                'location': 'UWI, Mona' 
+                                'name': 'FST Virtual Orientation',
+                                'start_date_time': '2020-08-31T09:00:00Z',
+                                'end_date_time': '2020-09-04T17:00:00Z',
+                                'location': 'Online',
+                                'poster_image': 'assets/fst_orientation_poster.JPG'
                             }]
 
         self.assertEqual(data, expected_response)
