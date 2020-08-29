@@ -31,7 +31,7 @@ class ContactInline(admin.ModelAdmin):
 
 class PositionInline (nested_admin.NestedStackedInline):
     model = Position
-    extra = 1
+    extra = 0
 
 class GeometryObjectInline(nested_admin.NestedTabularInline):
     model = GeometryObject
