@@ -72,8 +72,7 @@ class Event(models.Model):
     start_date_time = models.DateTimeField()
     end_date_time = models.DateTimeField()
     location = models.CharField(max_length = 150)
-    poster_image = models.ImageField(upload_to = 'assets/', height_field = None,\
-        width_field = None, max_length = 100, default = '')
+    poster_image = models.ImageField(null = True, blank = True)
 
     def __str__(self):
         return self.name
