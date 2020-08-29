@@ -1,8 +1,6 @@
 from django.db import models
 
 # Create your models here.
-
-
 class TestModel(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
@@ -10,15 +8,8 @@ class TestModel(models.Model):
     def __str__(self):
         return self.first_name + " " + self.last_name
 
-
-class Contact(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-    # phone = models.ForeignKey(PhoneNumber,on_delete=models.CASCADE, null=True, blank=True)
-    email = models.EmailField(max_length=50, default="", blank=True)
-    fax = models.CharField(max_length=255, default="", blank=True)
-    website = models.URLField(max_length=255, default="", blank=True)
-    description = models.TextField(default="", blank=True)
-    DEPARTMENT = [
+DEPARTMENT = [
+        ("BIOCHEM", "Biochemistry Section"),
         ("CHEM", "Chemistry"),
         ("COMP", "Computing"),
         ("GEO", "Geography and Geology"),
@@ -27,7 +18,14 @@ class Contact(models.Model):
         ("PHYS", "Physics"),
         ("OTHER", "Other"),
     ]
-    department = models.CharField(max_length=5, choices=DEPARTMENT)
+
+class Contact(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    email = models.EmailField(max_length=50, default="", blank=True)
+    fax = models.CharField(max_length=255, default="", blank=True)
+    website = models.URLField(max_length=255, default="", blank=True)
+    description = models.TextField(default="", blank=True)
+    department = models.CharField(max_length=7, choices=DEPARTMENT)
     CONTACT_TYPE = [
         ("EMERGENCY", "Emergency"),
         ("OFFICE", "Office"),
@@ -94,11 +92,13 @@ class GeoJSONFeature(models.Model):
     title = models.CharField(default='',max_length=50,unique=True)
     code = models.CharField(default='',max_length=50,unique=True)
     alt_name = models.CharField(default='',max_length=50, blank=True)
-    associated_with = models.CharField(default='', max_length=50, blank=True)
     GEO_JSON_TYPES = [("Feature", "Feature")]
     geo_json_type = models.CharField(
         default="Feature", max_length=7, choices=GEO_JSON_TYPES
     )
+    
+    associated_with = models.CharField(default="OTHER", max_length=7, choices=DEPARTMENT)
+    
 
     def __str__(self):
         return self.geo_json_type.__str__() + ' '+self.title+'/'+ self.alt_name+' '+ self.geometry.__str__()
@@ -111,8 +111,8 @@ class GeometryObject(models.Model):
         ("LineString", "LineString"),
         ("MultiLineString", "MultiLineString"),
         ("Polygon", "Polygon"),
-        ("MultiPolygon", "MultiPolygon"),
-        ("GeometryCollection", "GeometryCollection"),
+        #("MultiPolygon", "MultiPolygon"),
+        #("GeometryCollection", "GeometryCollection"),
     ]
     geometry_type = models.CharField(max_length=18, choices=GEOMETRY_TYPES)
     feature = models.OneToOneField(
