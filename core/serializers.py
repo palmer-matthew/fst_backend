@@ -34,7 +34,8 @@ class ScholarshipSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Scholarship
-        fields = ('id','name','description','details')
+        fields = ('id','name','number_of_awards','value',
+        'max_tenure','eligibility','criteria','method_of_selection','special_requirements','condition','additional_details')
 
 class EventSerializer(serializers.ModelSerializer):
 

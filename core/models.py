@@ -62,8 +62,17 @@ class PhoneNumber(models.Model):
 
 class Scholarship(models.Model):
     name = models.CharField(max_length=150)
-    description = models.TextField(default="")
-    details = models.TextField(default="")
+    additional_details = models.TextField(default="",blank=True)
+    #New Fields for Description
+    number_of_awards = models.CharField(max_length=80, default="",blank=True)
+    value = models.CharField(max_length=50, default="", blank=True)
+    max_tenure = models.CharField(max_length=255, default="", blank=True)
+    eligibility = models.TextField(default="",blank=True)
+    #New Fields for Details
+    criteria = models.TextField(default="",blank=True)
+    method_of_selection = models.TextField(default="",blank=True)
+    special_requirements = models.TextField(default="",blank=True)
+    condition = models.TextField(default="",blank=True)
 
     def __str__(self):
         return self.name

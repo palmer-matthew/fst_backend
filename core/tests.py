@@ -349,58 +349,58 @@ class  NewsFeedViewTest(TestCase):
                             }]
         self.assertEqual(data, expected_response)
 
-class ScholarshipViewTest(TestCase):
+# class ScholarshipViewTest(TestCase):
 
-    def setUp(self):
-        self.client = Client()
+#     def setUp(self):
+#         self.client = Client()
     
-    def test_get(self):
-        tst_scholar_model1 = Scholarship(
-            name ="Jimmy Neutron Welfare Scholarship",
-            description="Available for 1st - 2nd year students for a maximum of 7 years",
-            details="Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
-        )
-        tst_scholar_model1.save()
-        tst_scholar_model2 = Scholarship(
-            name ="Grace Kennedy Scholarship",
-            description="Available for 1st - 3nd year students for a maximum of 1 years",
-            details="Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
-        )
-        tst_scholar_model2.save()
-        tst_scholar_model3 = Scholarship(
-            name ="NCB STEM Scholarship",
-            description="Available for 2nd year students going into 3rd year for a maximum of 0.5 years",
-            details="Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
-        )
-        tst_scholar_model3.save()
+#     def test_get(self):
+#         tst_scholar_model1 = Scholarship(
+#             name ="Jimmy Neutron Welfare Scholarship",
+#             description="Available for 1st - 2nd year students for a maximum of 7 years",
+#             details="Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
+#         )
+#         tst_scholar_model1.save()
+#         tst_scholar_model2 = Scholarship(
+#             name ="Grace Kennedy Scholarship",
+#             description="Available for 1st - 3nd year students for a maximum of 1 years",
+#             details="Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
+#         )
+#         tst_scholar_model2.save()
+#         tst_scholar_model3 = Scholarship(
+#             name ="NCB STEM Scholarship",
+#             description="Available for 2nd year students going into 3rd year for a maximum of 0.5 years",
+#             details="Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
+#         )
+#         tst_scholar_model3.save()
 
-        response = self.client.get('/scholarship/')
+#         response = self.client.get('/scholarship/')
 
-        self.assertEqual(response.status_code, 200)
+#         self.assertEqual(response.status_code, 200)
 
-        data = response.json()
+#         data = response.json()
 
-        self.assertEqual(len(data), 3)
+#         self.assertEqual(len(data), 3)
 
-        expected_response = [{
-                                'id': tst_scholar_model1.id, 
-                                'name': "Jimmy Neutron Welfare Scholarship",
-                                'description': "Available for 1st - 2nd year students for a maximum of 7 years",
-                                'details': "Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
+#         expected_response = [{
+#                                 'id': tst_scholar_model1.id, 
+#                                 'name': "Jimmy Neutron Welfare Scholarship",
+#                                 'description': "Available for 1st - 2nd year students for a maximum of 7 years",
+#                                 'details': "Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
 
-                            }, 
-                            {
-                              'id': tst_scholar_model2.id,
-                              'name': "Grace Kennedy Scholarship",
-                              'description': "Available for 1st - 3nd year students for a maximum of 1 years",
-                              'details': "Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
+#                             }, 
+#                             {
+#                               'id': tst_scholar_model2.id,
+#                               'name': "Grace Kennedy Scholarship",
+#                               'description': "Available for 1st - 3nd year students for a maximum of 1 years",
+#                               'details': "Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
 
-                            },
-                            {
-                              'id': tst_scholar_model3.id,
-                              'name': "NCB STEM Scholarship",
-                              'description': "Available for 2nd year students going into 3rd year for a maximum of 0.5 years",
-                              'details': "Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
+#                             },
+#                             {
+#                               'id': tst_scholar_model3.id,
+#                               'name': "NCB STEM Scholarship",
+#                               'description': "Available for 2nd year students going into 3rd year for a maximum of 0.5 years",
+#                               'details': "Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
  
-                            }]
-        self.assertEqual(data, expected_response)
+#                             }]
+#         self.assertEqual(data, expected_response)
