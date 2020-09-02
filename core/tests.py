@@ -349,58 +349,66 @@ class  NewsFeedViewTest(TestCase):
                             }]
         self.assertEqual(data, expected_response)
 
-# class ScholarshipViewTest(TestCase):
+class ScholarshipViewTest(TestCase):
 
-#     def setUp(self):
-#         self.client = Client()
+    def setUp(self):
+        self.client = Client()
     
-#     def test_get(self):
-#         tst_scholar_model1 = Scholarship(
-#             name ="Jimmy Neutron Welfare Scholarship",
-#             description="Available for 1st - 2nd year students for a maximum of 7 years",
-#             details="Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
-#         )
-#         tst_scholar_model1.save()
-#         tst_scholar_model2 = Scholarship(
-#             name ="Grace Kennedy Scholarship",
-#             description="Available for 1st - 3nd year students for a maximum of 1 years",
-#             details="Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
-#         )
-#         tst_scholar_model2.save()
-#         tst_scholar_model3 = Scholarship(
-#             name ="NCB STEM Scholarship",
-#             description="Available for 2nd year students going into 3rd year for a maximum of 0.5 years",
-#             details="Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
-#         )
-#         tst_scholar_model3.save()
+    def test_get(self):
+        tst_scholar_model1 = Scholarship(
+            name="Bernie & Ramona Benson Scholarship",
+            number_of_awards="One (1)",
+            value="US $2000.00 (Year 1)",
+            max_tenure="Three (3) years",
+            eligibility="The award is available to: students registered in the Undergraduate Degree programme; Jamaican nationals; enrolled in any faculty (year 3-5 for Medical Sciences Student).",
+            criteria="The award will be based on: high academic performance in at least three (3) subjects at CAPE Units Ι and ΙΙ or attained at least a Grade Point Average (GPA) of 3.0 in the previous academic year of the UWI examinations; verifiable financial need; involvement in co-curricular/community activities; leadership qualities etc.",
+            method_of_selection="Selections will be done by the Donor on the recommendation of The UWI.",
+            additional_details="Please Note: Students will continue on the award in subsequent years based on academic performance."
+        )
+        tst_scholar_model1.save()
+        tst_scholar_model2 = Scholarship(
+            name="Ambassador Sue Cobb Scholarship",
+            number_of_awards="To be decided by Donor",
+            value="Amount for Tuition",
+            max_tenure="One (1) year",
+            eligibility="The award is available to Jamaica Nationals or students of Jamaican parentage who are registered at the UWI and will be entering their final year of study.",
+            criteria="The award will be based on: high academic performance in the last academic year's University examinations (at least a GPA of 3.3); demonstrable leadership potential; significant participation in co-curricular activities (e.g. sports, music and/or the arts).",
+            method_of_selection="Shortlisted candidates will be interviewed by a committee comprising personnel from the University and the JFHAA Scholarship Committee",
+        )
+        tst_scholar_model2.save()
 
-#         response = self.client.get('/scholarship/')
+        response = self.client.get('/scholarship/')
 
-#         self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
 
-#         data = response.json()
+        data = response.json()
 
-#         self.assertEqual(len(data), 3)
+        self.assertEqual(len(data), 2)
 
-#         expected_response = [{
-#                                 'id': tst_scholar_model1.id, 
-#                                 'name': "Jimmy Neutron Welfare Scholarship",
-#                                 'description': "Available for 1st - 2nd year students for a maximum of 7 years",
-#                                 'details': "Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
-
-#                             }, 
-#                             {
-#                               'id': tst_scholar_model2.id,
-#                               'name': "Grace Kennedy Scholarship",
-#                               'description': "Available for 1st - 3nd year students for a maximum of 1 years",
-#                               'details': "Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
-
-#                             },
-#                             {
-#                               'id': tst_scholar_model3.id,
-#                               'name': "NCB STEM Scholarship",
-#                               'description': "Available for 2nd year students going into 3rd year for a maximum of 0.5 years",
-#                               'details': "Must be involved in co-curricular activities, must have good hygiene, must be smart and not dunce"
- 
-#                             }]
-#         self.assertEqual(data, expected_response)
+        expected_response = [{
+                                'id': tst_scholar_model1.id, 
+                                "name": "Bernie & Ramona Benson Scholarship",
+                                "number_of_awards": "One (1)",
+                                "value": "US $2000.00 (Year 1)",
+                                "max_tenure": "Three (3) years",
+                                "eligibility": "The award is available to: students registered in the Undergraduate Degree programme; Jamaican nationals; enrolled in any faculty (year 3-5 for Medical Sciences Student).",
+                                "criteria": "The award will be based on: high academic performance in at least three (3) subjects at CAPE Units Ι and ΙΙ or attained at least a Grade Point Average (GPA) of 3.0 in the previous academic year of the UWI examinations; verifiable financial need; involvement in co-curricular/community activities; leadership qualities etc.",
+                                "method_of_selection": "Selections will be done by the Donor on the recommendation of The UWI.",
+                                "special_requirements": "",
+                                "condition": "",
+                                "additional_details": "Please Note: Students will continue on the award in subsequent years based on academic performance."
+                            }, 
+                            {
+                              'id': tst_scholar_model2.id,
+                              "name": "Ambassador Sue Cobb Scholarship",
+                              "number_of_awards": "To be decided by Donor",
+                              "value": "Amount for Tuition",
+                              "max_tenure": "One (1) year",
+                              "eligibility": "The award is available to Jamaica Nationals or students of Jamaican parentage who are registered at the UWI and will be entering their final year of study.",
+                              "criteria": "The award will be based on: high academic performance in the last academic year's University examinations (at least a GPA of 3.3); demonstrable leadership potential; significant participation in co-curricular activities (e.g. sports, music and/or the arts).",
+                              "method_of_selection": "Shortlisted candidates will be interviewed by a committee comprising personnel from the University and the JFHAA Scholarship Committee",
+                              "special_requirements": "",
+                              "condition": "",
+                              "additional_details": ""
+                            }]
+        self.assertEqual(data, expected_response)
