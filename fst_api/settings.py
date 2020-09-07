@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'core',
     'nested_admin',
+    'PIL'
 ]
 
 REST_FRAMEWORK = {
@@ -130,7 +131,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+MEDIA_URL = '/images/'
+
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR, 'static/')
+]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())

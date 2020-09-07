@@ -25,6 +25,8 @@ from core.views import NewsFeedView
 from core.views import PositionView
 from core.views import GeoJSONFeatureView
 from core.views import GeometryObjectView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls')),
@@ -40,3 +42,5 @@ urlpatterns = [
     path('feature/',GeoJSONFeatureView.as_view()),
     path('geometryobject/', GeometryObjectView.as_view())
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
